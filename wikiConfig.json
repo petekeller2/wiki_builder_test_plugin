@@ -6,6 +6,6 @@
   "ignoreDirs": ["test", "src/test"],
   "statsEnabled": true,
   "useGitignore": false,
-  "plugins": ["wiki-builder-plugin-example"],
+  "plugins": ["wiki-builder-plugin-test"],
   "useLogger": false
 }
