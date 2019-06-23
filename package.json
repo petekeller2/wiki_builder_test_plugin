@@ -1,0 +1,29 @@
+{
+  "name": "wiki_builder_test_plugin",
+  "version": "0.9.0",
+  "description": "",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "start": "npm run clear-wiki && npm run empty-log && wiki-builder",
+    "empty-log": "truncate -s 0 log.txt",
+    "clear-wiki": "rm -rf wiki",
+    "local-setup": "npm run uninstall-packages && node local.js && npm run preinstall",
+    "uninstall-packages": "npm uninstall wiki-builder --save && npm uninstall wiki-builder-plugin-test --save",
+    "install-packages": "npm install wiki-builder -save && npm install wiki-builder-plugin-test --save",
+    "npm-setup": "node npm.js && npm run uninstall-packages && npm run install-packages && npm install",
+    "pre-commit": "npm run npm-setup && npm run -s latest-version-text && npm run -s sugestion-text",
+    "latest-version-text": "echo 'The latest version of this package is: ' && npm show wiki-builder-plugin-test version",
+    "sugestion-text": "echo '\nPlease check the version number in the package.json.\n'"
+  },
+  "author": "Peter Keller",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "fs-extra": "^8.0.1",
+    "wiki-builder": "^0.9.6"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.3"
+  }
+}

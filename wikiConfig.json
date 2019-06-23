@@ -1,0 +1,11 @@
+{
+  "wikiDirPath": "wiki",
+  "projectDirPath": "./",
+  "ignoreMdFiles": ["main.md"],
+  "ignoreMdTitles": ["tester", "testing"],
+  "ignoreDirs": ["test", "src/test"],
+  "statsEnabled": true,
+  "useGitignore": false,
+  "plugins": ["wiki-builder-plugin-example"],
+  "useLogger": false
+}
